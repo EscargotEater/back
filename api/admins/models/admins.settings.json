@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "admins",
+  "info": {
+    "name": "admins",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "RegisterID": {
+      "type": "integer"
+    },
+    "Username": {
+      "type": "string"
+    },
+    "Password": {
+      "type": "string"
+    }
+  }
+}

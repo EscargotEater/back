@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "resultcads",
+  "info": {
+    "name": "resultcad",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "UserID": {
+      "type": "integer"
+    },
+    "bmi": {
+      "type": "decimal"
+    },
+    "bpsy": {
+      "type": "decimal"
+    },
+    "fbs": {
+      "type": "decimal"
+    },
+    "tchol": {
+      "type": "decimal"
+    },
+    "hdl": {
+      "type": "decimal"
+    },
+    "risk_cvd": {
+      "type": "integer"
+    },
+    "age": {
+      "type": "integer"
+    },
+    "height": {
+      "type": "decimal"
+    },
+    "weight": {
+      "type": "decimal"
+    }
+  }
+}

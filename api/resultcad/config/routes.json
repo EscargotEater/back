@@ -1,0 +1,60 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/resultcads",
+      "handler": "resultcad.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/resultcads/count",
+      "handler": "resultcad.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/resultcads/:id",
+      "handler": "resultcad.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/resultcads",
+      "handler": "resultcad.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/resultcads/:id",
+      "handler": "resultcad.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/resultcads/:id",
+      "handler": "resultcad.delete",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/predict/:target",
+      "handler": "resultcad.predict",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

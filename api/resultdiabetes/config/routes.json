@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/resultdiabetes",
+      "handler": "resultdiabetes.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/resultdiabetes/count",
+      "handler": "resultdiabetes.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/resultdiabetes/:id",
+      "handler": "resultdiabetes.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/resultdiabetes",
+      "handler": "resultdiabetes.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/resultdiabetes/:id",
+      "handler": "resultdiabetes.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/resultdiabetes/:id",
+      "handler": "resultdiabetes.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

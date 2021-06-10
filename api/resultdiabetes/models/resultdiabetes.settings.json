@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "resultdiabetes",
+  "info": {
+    "name": "resultdiabetes",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "UserID": {
+      "type": "integer"
+    },
+    "BMI": {
+      "type": "decimal"
+    },
+    "Systolic_Blood_Pressure": {
+      "type": "decimal"
+    },
+    "Diastolic_Blood_Pressure": {
+      "type": "decimal"
+    },
+    "Glucose": {
+      "type": "decimal"
+    },
+    "Cholesterol": {
+      "type": "decimal"
+    },
+    "HDI_C": {
+      "type": "decimal"
+    },
+    "Diabetes": {
+      "type": "decimal"
+    },
+    "risk_Coronary_heart_disease": {
+      "type": "decimal"
+    }
+  }
+}
