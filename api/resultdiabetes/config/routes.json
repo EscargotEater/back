@@ -47,6 +47,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "POST",
+      "path": "/predict/db",
+      "handler": "resultdiabetes.predict",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }

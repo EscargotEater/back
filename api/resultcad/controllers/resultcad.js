@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * Read the documentation (https://strapi.io/documentation/developer-docs/latest/development/backend-customization.html#core-controllers)
@@ -7,32 +7,40 @@
 const axios = require("axios");
 
 module.exports = {
-    async predict(ctx){
-        const { fbs, waist, age, bpsy, tchol, hdl, weight, height } = ctx.request.body;
-        const user = ctx.user.state;
-        const bmi = (height/100)**2 / weight;
-        risk_cvd = await axios.post(
-            'http://192.168.1.76:5000/predict/?target=hd',{
-            fbs,
-            bmi,
-            waist,
-            age,
-            bpsy,
-            tchol,
-            hdl,
-          });
-        const res = await strapi.query('resultcad').create({
-            fbs,
-            bmi,
-            waist,
-            age,
-            bpsy,
-            tchol,
-            hdl,
-            weight,
-            height,
-            risk_cvd,
-        });
-        ctx.send(res);
+  async findID(ctx) {
+    const user = ctx.state.user;
+    if (user) {
+      const id = user.id;
+      const res = await strapi.query("resultcad").find({});
     }
+  },
+  async predict(ctx) {
+    const { fbs, waist, age, bpsy, bpdi, tchol, hdl } = ctx.request.body;
+    const user = ctx.state.user;
+    const bmi = (height / 100) ** 2 / weight;
+    risk_cvd = await axios.post("http://localhost:5000/predict/?target=hd", {
+      fbs,
+      waist,
+      age,
+      bpsy,
+      bpdi,
+      tchol,
+      hdl,
+    });
+    if (user) {
+      const id = user.id;
+      const res = await strapi.query("resultcad").create({
+        id,
+        fbs,
+        waist,
+        age,
+        bpsy,
+        bpdi,
+        tchol,
+        hdl,
+        risk_cvd,
+      });
+    }
+    ctx.send(risk_cvd);
+  },
 };

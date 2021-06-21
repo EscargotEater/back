@@ -50,7 +50,7 @@
     },
     {
       "method": "POST",
-      "path": "/predict/:target",
+      "path": "/predict/cad",
       "handler": "resultcad.predict",
       "config": {
         "policies": []
