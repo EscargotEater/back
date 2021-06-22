@@ -55,6 +55,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "GET",
+      "path": "/predict/db",
+      "handler": "resultdiabetes.findID",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }

@@ -10,8 +10,11 @@ module.exports = {
   async findID(ctx) {
     const user = ctx.state.user;
     if (user) {
-      const id = user.id;
-      const res = await strapi.query("resultcad").find({});
+      const res = await strapi.query("resultcad").find({
+        UserID: user.id,
+        created_at_gte: new Date(date_from),
+        created_at_lte: new Date(date_to),
+      });
     }
   },
   async predict(ctx) {

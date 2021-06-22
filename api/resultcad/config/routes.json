@@ -55,6 +55,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "GET",
+      "path": "/predict/cad",
+      "handler": "resultdiabetes.findID",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }

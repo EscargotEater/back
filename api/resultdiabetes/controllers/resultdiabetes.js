@@ -8,6 +8,16 @@
 const axios = require("axios");
 
 module.exports = {
+  async findID(ctx) {
+    const user = ctx.state.user;
+    if (user) {
+      const res = await strapi.query("resultdiabetes").find({
+        UserID: user.id,
+        created_at_gte: new Date(date_from),
+        created_at_lte: new Date(date_to),
+      });
+    }
+  },
   async predict(ctx) {
     const { fbs, waist, age, bpsy, tchol, hdl, weight, height } =
       ctx.request.body;
