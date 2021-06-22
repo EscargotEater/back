@@ -9,6 +9,7 @@ const axios = require("axios");
 module.exports = {
   async findID(ctx) {
     const user = ctx.state.user;
+    const { date_from, date_to } = ctx.request.body;
     if (user) {
       const res = await strapi.query("resultcad").find({
         UserID: user.id,
