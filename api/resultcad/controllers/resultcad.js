@@ -22,19 +22,9 @@ module.exports = {
     const { fbs, waist, age, bpsy, bpdi, tchol, hdl } = ctx.request.body;
     const user = ctx.state.user;
     const bmi = (height / 100) ** 2 / weight;
-    risk_cvd = await axios.post("http://localhost:5000/predict/?target=hd", {
-      fbs,
-      waist,
-      age,
-      bpsy,
-      bpdi,
-      tchol,
-      hdl,
-    });
-    if (user) {
-      const id = user.id;
-      const res = await strapi.query("resultcad").create({
-        id,
+    const result = await axios.post(
+      "http://localhost:5000/predict/?target=hd",
+      {
         fbs,
         waist,
         age,
@@ -42,9 +32,22 @@ module.exports = {
         bpdi,
         tchol,
         hdl,
-        risk_cvd,
+      }
+    );
+    const risk_cad = parseInt(result.data);
+    if (user) {
+      const id = user.id;
+      const res = await strapi.query("resultcad").create({
+        userID: id,
+        age,
+        bpsy,
+        bpdi,
+        fbs,
+        tchol,
+        hdl,
+        risk_cad,
       });
     }
-    ctx.send(risk_cvd);
+    ctx.send(risk_cad);
   },
 };

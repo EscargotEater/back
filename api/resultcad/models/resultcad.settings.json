@@ -1,6 +1,6 @@
 {
   "kind": "collectionType",
-  "collectionName": "resultcads",
+  "collectionName": "resultcad",
   "info": {
     "name": "resultcad",
     "description": ""
@@ -11,35 +11,37 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "UserID": {
-      "type": "integer"
-    },
-    "bmi": {
-      "type": "decimal"
-    },
-    "bpsy": {
-      "type": "decimal"
-    },
-    "fbs": {
-      "type": "decimal"
-    },
-    "tchol": {
-      "type": "decimal"
-    },
-    "hdl": {
-      "type": "decimal"
-    },
-    "risk_cvd": {
-      "type": "integer"
+    "userID": {
+      "type": "integer",
+      "required": true
     },
     "age": {
-      "type": "integer"
+      "type": "integer",
+      "required": true
     },
-    "height": {
-      "type": "decimal"
+    "bpsy": {
+      "type": "decimal",
+      "required": true
     },
-    "weight": {
-      "type": "decimal"
+    "bpdi": {
+      "type": "decimal",
+      "required": true
+    },
+    "fbs": {
+      "type": "decimal",
+      "required": true
+    },
+    "tchol": {
+      "type": "decimal",
+      "required": true
+    },
+    "hdl": {
+      "type": "decimal",
+      "required": true
+    },
+    "risk_cad": {
+      "type": "boolean",
+      "required": true
     }
   }
 }

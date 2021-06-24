@@ -11,32 +11,45 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "UserID": {
-      "type": "integer"
+    "userID": {
+      "type": "integer",
+      "required": true
     },
-    "BMI": {
-      "type": "decimal"
+    "age": {
+      "type": "integer",
+      "required": true
     },
-    "Systolic_Blood_Pressure": {
-      "type": "decimal"
+    "bmi": {
+      "type": "decimal",
+      "required": true
     },
-    "Diastolic_Blood_Pressure": {
-      "type": "decimal"
+    "bpsy": {
+      "type": "decimal",
+      "required": true
     },
-    "Glucose": {
-      "type": "decimal"
+    "fbs": {
+      "type": "decimal",
+      "required": true
     },
-    "Cholesterol": {
-      "type": "decimal"
+    "tchol": {
+      "type": "decimal",
+      "required": true
     },
-    "HDI_C": {
-      "type": "decimal"
+    "hdl": {
+      "type": "decimal",
+      "required": true
     },
-    "Diabetes": {
-      "type": "decimal"
+    "height": {
+      "type": "decimal",
+      "required": true
     },
-    "risk_Coronary_heart_disease": {
-      "type": "decimal"
+    "weight": {
+      "type": "decimal",
+      "required": true
+    },
+    "risk_db": {
+      "type": "boolean",
+      "required": true
     }
   }
 }

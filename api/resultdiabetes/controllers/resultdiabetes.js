@@ -23,29 +23,33 @@ module.exports = {
     const { fbs, waist, age, bpsy, tchol, hdl, weight, height } =
       ctx.request.body;
     const user = ctx.state.user;
-    const bmi = (height / 100) ** 2 / weight;
-    risk_db = await axios.post("http://localhost:5000/predict/?target=db", {
-      fbs,
-      bmi,
-      waist,
-      age,
-      bpsy,
-      tchol,
-      hdl,
-    });
+    const bmi = (weight / ((height / 100) * (height / 100))).toFixed(2);
+    const result = await axios.post(
+      "http://localhost:5000/predict/?target=db",
+      {
+        fbs: fbs,
+        bmi: bmi,
+        waist: waist,
+        age: age,
+        bpsy: bpsy,
+        tchol: tchol,
+        hdl: hdl,
+      }
+    );
+    const risk_db = parseInt(result.data);
+    console.log(risk_db);
     if (user) {
       const id = user.id;
       const res = await strapi.query("resultdiabetes").create({
-        id,
-        fbs,
-        bmi,
-        waist,
+        userID: id,
         age,
+        bmi,
         bpsy,
+        fbs,
         tchol,
         hdl,
-        weight,
         height,
+        weight,
         risk_db,
       });
     }
